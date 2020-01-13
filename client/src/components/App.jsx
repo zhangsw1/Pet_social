@@ -1,20 +1,47 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Create from './Create.jsx';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
 
-    }
-  }
-  render(){
-    return (
-      <div id = 'app'>
+export default function BasicExample() {
+  return (
+    <Router>
+      <div>
+        <ul>
+          <ol>
+            <Link to="/">Home </Link>
+            <Link to="/Create">Create Events</Link>
+          </ol>
+        </ul>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/create">
+            <Create />
+          </Route>
 
-        <h1>HEY IT'S APP.JSX</h1>
+        </Switch>
       </div>
-    )
-  }
+    </Router>
+  );
 }
 
-export default App;
+
+function Home() {
+  return (
+    <div>
+      <h1 className='home-title'>PetPal</h1>
+      <h3 className='home-content'>The Only Dogs Meeting Friends Website</h3>
+      <hr />
+      <div className='home-button'>
+          <button className="btn btn-default btn-lg"><Link to = '/Create'>Create Events</Link> <i class="fas fa-paw"></i></button>
+      </div>
+    </div>
+  );
+}
