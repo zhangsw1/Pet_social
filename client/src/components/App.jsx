@@ -40,7 +40,7 @@ export default function App() {
 
 function Home() {
   return (
-    <div>
+    <div className='home'>
       <h1 className='home-title'>PetPal</h1>
       <h3 className='home-content'>The Only Dogs Meeting Friends Website</h3>
       <hr />

@@ -2,10 +2,13 @@ import React from 'react';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Bootstrap from "react-bootstrap";
-import Col from 'react-bootstrap/Col'
+import Col from 'react-bootstrap/Col';
+
 const View = () => {
   return (
     <Form className = 'form-content'>
+      <div>Event Details</div>
+      <hr/>
       <Form.Row>
         <Form.Group as={Col} md="4" controlId="validationCustom01">
           <Form.Label>Event Name</Form.Label>
@@ -60,7 +63,7 @@ const View = () => {
           />
         </Form.Group>
       </Form.Row>
-      <Form.Group md="8" controlId="validationCustom02">
+      <Form.Group md="12" controlId="validationCustom02">
           <Form.Label>Description</Form.Label>
           <Form.Control
             required
@@ -69,6 +72,7 @@ const View = () => {
           />
         </Form.Group>
 
+
       <Form.Group>
         <Form.Check
           required
@@ -76,12 +80,15 @@ const View = () => {
           feedback="You must agree before submitting."
         />
       </Form.Group>
-      <Button type="submit">Submit form</Button>
+      <div>Nice job! You're almost done.</div>
+      <Button type="submit">Make Your Event Live</Button>
 
   </Form>
   )
 
 }
-
+// const View = () => {
+//   <Button type="submit">Submit form</Button>
+// }
 
 export default View;
