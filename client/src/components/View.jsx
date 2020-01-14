@@ -1,94 +1,19 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-import Bootstrap from "react-bootstrap";
-import Col from 'react-bootstrap/Col';
-
-const View = () => {
+import Event from './Event.jsx'
+const View = ({events, changeView}) => {
   return (
-    <Form className = 'form-content'>
-      <div>Event Details</div>
-      <hr/>
-      <Form.Row>
-        <Form.Group as={Col} md="4" controlId="validationCustom01">
-          <Form.Label>Event Name</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="Event Name"
-          />
-        </Form.Group>
-        <Form.Group as={Col} md="4" controlId="validationCustom02">
-          <Form.Label>Location</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="Location"
-          />
-        </Form.Group>
-      </Form.Row>
-      <Form.Row>
-        <Form.Group as={Col} md="4" controlId="validationCustom01">
-          <Form.Label>Date</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="Date"
-          />
-        </Form.Group>
-        <Form.Group as={Col} md="4" controlId="validationCustom02">
-          <Form.Label>Time</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="Time"
-          />
-        </Form.Group>
-      </Form.Row>
-      <Form.Row>
-        <Form.Group as={Col} md="4" controlId="validationCustom01">
-          <Form.Label>Organizer Name</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="Organizer Name"
-          />
-        </Form.Group>
-        <Form.Group as={Col} md="4" controlId="validationCustom02">
-          <Form.Label>Contact Info</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="Time"
-          />
-        </Form.Group>
-      </Form.Row>
-      <Form.Group md="12" controlId="validationCustom02">
-          <Form.Label>Description</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="Time"
-          />
-        </Form.Group>
+  <div className="view">
+    <ul>
+      <li className="view-list-item">
+        {events.map(event =>(
+          <Event event = {event} key = {event._id} changeView={changeView}/>
 
+          ))}
 
-      <Form.Group>
-        <Form.Check
-          required
-          label=" Agree to terms and conditions"
-          feedback="You must agree before submitting."
-        />
-      </Form.Group>
-      <div>Nice job! You're almost done.</div>
-      <Button type="submit">Make Your Event Live</Button>
-
-  </Form>
+      </li>
+    </ul>
+  </div>
   )
-
-}
-// const View = () => {
-//   <Button type="submit">Submit form</Button>
-// }
+};
 
 export default View;

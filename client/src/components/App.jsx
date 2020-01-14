@@ -1,52 +1,118 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import Register from './Register.jsx'
-import View from './View.jsx'
-export default function App() {
-  return (
-    <Router>
-      <div>
-        <ul>
-        <ol>
-            <Link to="/">Home </Link>
-            <Link to="/register">Register Events</Link>
-            <Link to="/view">View Events</Link>
-          </ol>
-        </ul>
+import React from 'react';
+import ReactDOM from 'react-dom';
+import $ from 'jquery';
+import Home from './Home.jsx';
+import View from './View.jsx';
+import Create from './Create.jsx';
+import Navbar from 'react-bootstrap/Navbar';
 
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/register">
-            <Register />
-          </Route>
-          <Route exact path="/view">
-            <View />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-  );
+class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      pageName : 'home',
+      events:[]
+    }
+    this.changeView = this.changeView.bind(this);
+    this.fetchView=this.fetchView.bind(this);
+  }
+
+
+
+componentWillMount(){
+  this.fetchView();
+
 }
 
-// You can think of these components as "pages"
-// in your app.
+changeView(option) {
+  console.log("option:!!!!!",option);
+  this.setState({
+    pageName: option,
 
-function Home() {
+  });
+}
+
+// fetchView(){
+//   $.ajax({
+//     type:'GET',
+//     url: '/api/events',
+//     success:(data) => {
+//       console.log("index.jsx fetch data",data);
+//       this.setState ({events:data});
+//     },
+//     error:(err) => {
+//       console.log("there is an error", err)
+//     }
+//   })
+// }
+
+fetchView() {
+  fetch("http://localhost:3003/api/events")
+    .then((userInput) =>userInput.json())
+    .then((userInput) => {
+      console.log('!!!!!!!!!!!!!!!!!!!!results',userInput);
+      this.setState ({events:userInput});
+    })
+    .catch((err)=>{
+      console.log("here is an error",err)
+    })
+}
+
+// postdata(userInput) {
+//   $.ajax({
+//     type: "POST",
+//     url: "api/events",
+//     data: JSON.stringify({ userInput }),
+//     contentType: "application/json; charset=utf-8",
+//     success: () => {
+//       this.fetchView();
+//     },
+//     failure: function(errMsg) {
+//         alert(errMsg);
+//     }
+//   });
+// }
+
+
+renderView() {
+  const {pageName} = this.state;
+
+  console.log("what is pageName in renderview: ",pageName)
+  if(pageName==='home'){
+    return <Home  changeView={this.changeView}/>
+  }else if(pageName==='create'){
+    return <Create fetchView = {this.fetchView}/>
+  }else if(pageName==='view'){
+    console.log("did you get here",this.state.events);
+    return  <View events={this.state.events} changeView={this.changeView}/>
+  }
+
+}
+
+render() {
   return (
-    <div className='home'>
-      <h1 className='home-title'>PetPal</h1>
-      <h3 className='home-content'>The Only Dogs Meeting Friends Website</h3>
-      <hr />
-      <div className='home-button'>
-          <button className="btn btn-default btn-lg"><Link to = '/Register'>Create Events</Link> <i class="fas fa-paw"></i></button>
+    <div>
+      <div className="nav">
+        <span className="logo"
+          onClick={() => this.changeView('home')}>
+          PetPal
+        </span>
+        <span className={this.state.view === 'view'
+          ? 'nav-selected'
+          : 'nav-unselected'}
+          onClick={() => this.changeView('view')}>
+          See all events
+        </span>
+         <span className="nav-unselected" onClick={() => this.changeView('create')}>
+            Create Event
+          </span>
+      </div>
+
+      <div className="main">
+        {this.renderView()}
       </div>
     </div>
   );
 }
+}
+export default App;

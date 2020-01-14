@@ -11,9 +11,7 @@ let eventsSchema = new mongoose.Schema({
   eventLocation: String,
   eventLimitation: String,
   created: { type: Date, default: Date.now }
-
-}
-);
+});
 
 let Events = mongoose.model('Events', eventsSchema);
 
@@ -28,6 +26,8 @@ let fetchData = (callback) => {
     }
   })
 }
+
+
 
 module.exports = Events;
 module.exports.fetchData = fetchData;
