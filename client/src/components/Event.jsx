@@ -20,7 +20,7 @@ const Event = ({event,changeView}) => {
   console.log("this is event: ",event);
   return (
     <div className="post">
-<h3 className="post-date">{event.eventDate}{" "}{event.eventTime}</h3>
+<h3 className="post-date">{event.eventDate}{", "}{event.eventTime}</h3>
       <h3 className="post-title">{event.eventName}{" - "}{event.eventLocation}</h3>
   <div className="post-byline"><span className="post-byline-author">{event.eventHost}{" • "}{event.contactInfo}</span>
 

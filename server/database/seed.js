@@ -4,7 +4,7 @@ const Events = require('./schema.js');
 const sampleEvents = [
   {
     eventName: 'Lab Shadow is turning 2',
-    eventDate: 'Sat, Jan 31st,',
+    eventDate: 'Sat, Jan 31st',
     eventTime: '12:30PM',
     eventHost: 'Jo',
     contactInfo: 'shadowlove@gmail.com',
@@ -14,7 +14,7 @@ const sampleEvents = [
   },
   {
     eventName: 'Beagle Celebration',
-    eventDate: 'Sat, Feb 1st,',
+    eventDate: 'Sat, Feb 1st',
     eventTime: '12:30PM',
     eventHost: 'David',
     contactInfo: 'david123@gmail.com',
@@ -24,7 +24,7 @@ const sampleEvents = [
   },
   {
     eventName: 'Puppy Social Time in Bay Area',
-    eventDate: 'Sat, Feb 7st, ',
+    eventDate: 'Sat, Feb 7st',
     eventTime: '10:30PM',
     eventHost: 'Lucy',
     contactInfo: 'whiskyforlove@gmail.com',
@@ -36,7 +36,6 @@ const sampleEvents = [
 
 const insertSampleEvents = function() {
   Events.create(sampleEvents)
-  .then(() => db.disconnect);
 }
 
 insertSampleEvents();

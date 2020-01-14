@@ -5,7 +5,9 @@ import Home from './Home.jsx';
 import View from './View.jsx';
 import Create from './Create.jsx';
 import Navbar from 'react-bootstrap/Navbar';
-
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form';
+import FormControl from 'react-bootstrap/FormControl';
 class App extends React.Component {
   constructor(props){
     super(props);
@@ -58,20 +60,6 @@ fetchView() {
     })
 }
 
-// postdata(userInput) {
-//   $.ajax({
-//     type: "POST",
-//     url: "api/events",
-//     data: JSON.stringify({ userInput }),
-//     contentType: "application/json; charset=utf-8",
-//     success: () => {
-//       this.fetchView();
-//     },
-//     failure: function(errMsg) {
-//         alert(errMsg);
-//     }
-//   });
-// }
 
 
 renderView() {
@@ -89,13 +77,14 @@ renderView() {
 
 }
 
+
 render() {
   return (
     <div>
       <div className="nav">
         <span className="logo"
           onClick={() => this.changeView('home')}>
-          PetPal
+          <Navbar.Brand>PetPal</Navbar.Brand>
         </span>
         <span className={this.state.view === 'view'
           ? 'nav-selected'
@@ -106,6 +95,10 @@ render() {
          <span className="nav-unselected" onClick={() => this.changeView('create')}>
             Create Event
           </span>
+          <Form inline>
+  <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+  <Button variant="outline-primary">Search</Button>
+</Form>
       </div>
 
       <div className="main">

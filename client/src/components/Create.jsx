@@ -144,11 +144,12 @@ class Create extends React.Component {
             </Form.Group>
         </Form.Row>
 
+        <div className = 'description'>
 
-
-        <Form.Group md="10" controlId="event-description">
+        <Form.Row>
+        <Form.Group controlId="event-description">
           <Form.Label>Description</Form.Label>
-          <Form.Control
+          <Form.Control className='create-description'
             required
             type="text"
             name='eventDescription'
@@ -157,12 +158,13 @@ class Create extends React.Component {
             placeholder="Description"
           />
         </Form.Group>
+        </Form.Row>
 
                <div>Nice job! You're almost done.</div>
                <br />
                <Button class="create-submit-button" type="submit">Make Your Event Live    <i class="fas fa-rocket"></i></Button>
 
-
+               </div>
           </form>
         </div>
         </div>
