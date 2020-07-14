@@ -1,0 +1,175 @@
+/* body {
+  background-position: center;
+  background-size: cover;
+  background-position: 0% 20%;
+  margin: 10px;
+} */
+
+body,
+html {
+  font-family: 'Noto Sans', sans-serif;
+  color: white;
+}
+
+.home{
+
+  height: 100%;
+  background: url(./dog.jpg);
+  /* background-position: center; */
+  background-size: cover;
+  padding: 9%;
+
+  /* background-position: 0% 60%; */
+  margin: 5px;
+}
+
+.home-title,
+.home-content {
+  font-weight: 700;
+  font-size: 5em;
+  text-align: center;
+}
+.home-title{
+  padding-top: 15%;
+}
+
+.home-content {
+  font-size: 2em;
+}
+
+.home-button {
+  text-align: center;
+}
+
+hr {
+  width: 500px;
+  border-top: 1px solid #f8f8f8;
+}
+
+.divider {
+  width: 600px;
+}
+
+.first-line post-date{
+  display: inline-block;
+}
+.create-editor {
+  width: 40%;
+  color: black;
+  position: absolute;
+  top: 17%;
+  left: 30%;
+  height: 50%;
+}
+
+.create-editor h2{
+  margin-left: 2%;
+}
+
+/* .form-content{
+  margin-left: 1%;
+  width:70%;
+  margin-top: 150px;
+  color: black;
+} */
+
+
+.nav {
+  color: black;
+}
+
+
+.post {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 800px;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  background-color: white;
+  padding: 5px 20px 5px 20px;
+}
+
+.post-title {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 20px;
+  line-height: 1em;
+  color: black;
+}
+
+
+.post-byline {
+  color: #777777;
+  font-size: .8em;
+  margin-bottom: 5%;
+}
+
+.post-byline-author {
+  font-weight: bolder;
+}
+
+.post-description{
+  color: #777777;
+  font-weight: light;
+}
+
+
+.post-date{
+  color: #D1410c;
+}
+
+.view {
+  padding: 4% 10% 0px 10%;
+}
+
+.view-list-item {
+  min-height: 350px;
+  margin: 40px;
+  list-style: none;
+  border: 1px solid #77777769;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  padding: 30px 50px 0px 50px;
+  box-shadow: 0 0 1em #80808066;
+}
+
+
+.nav {
+  background-color:#F8F9FA;
+  margin: 0px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: 'Noto Sans', sans-serif;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+
+}
+
+.nav-selected {
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+  margin-right: 5px;
+  font-size: 1.1em;
+}
+
+.nav-unselected {
+  padding: 5px;
+  margin-right: 5px;
+  font-size: 1.1em;
+}
+
+#event-description{
+  width: 98%;
+}
+
+.description{
+  margin-left: 3%
+}
+
+.event-confirm{
+  margin-left: 5%
+}
