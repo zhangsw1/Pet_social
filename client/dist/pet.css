@@ -7,12 +7,35 @@
 
 body,
 html {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   color: white;
+  margin: 0;
 }
 
-.home{
+.search-params {
+  width: 1100px;
+  margin: 200px;
+}
 
+.search-params form {
+  background-color: #d9c148;
+  width: 360px;
+  margin: 0px 25px 0px 0px;
+  padding: 35px 15px 15px 15px;
+  border-radius: 5px;
+  float: left;
+}
+
+.search {
+  background-color: #d9c148;
+  width: 715px;
+  padding: 15px;
+  border-radius: 9px;
+  float: left;
+  margin-bottom: 25px;
+}
+
+.home {
   height: 100%;
   background: url(./dog.jpg);
   /* background-position: center; */
@@ -29,7 +52,7 @@ html {
   font-size: 5em;
   text-align: center;
 }
-.home-title{
+.home-title {
   padding-top: 15%;
 }
 
@@ -50,7 +73,7 @@ hr {
   width: 600px;
 }
 
-.first-line post-date{
+.first-line post-date {
   display: inline-block;
 }
 .create-editor {
@@ -62,22 +85,13 @@ hr {
   height: 50%;
 }
 
-.create-editor h2{
+.create-editor h2 {
   margin-left: 2%;
 }
-
-/* .form-content{
-  margin-left: 1%;
-  width:70%;
-  margin-top: 150px;
-  color: black;
-} */
-
 
 .nav {
   color: black;
 }
-
 
 .post {
   width: 80%;
@@ -90,16 +104,15 @@ hr {
 }
 
 .post-title {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-size: 20px;
   line-height: 1em;
   color: black;
 }
 
-
 .post-byline {
   color: #777777;
-  font-size: .8em;
+  font-size: 0.8em;
   margin-bottom: 5%;
 }
 
@@ -107,14 +120,13 @@ hr {
   font-weight: bolder;
 }
 
-.post-description{
+.post-description {
   color: #777777;
   font-weight: light;
 }
 
-
-.post-date{
-  color: #D1410c;
+.post-date {
+  color: #d1410c;
 }
 
 .view {
@@ -132,20 +144,18 @@ hr {
   box-shadow: 0 0 1em #80808066;
 }
 
-
 .nav {
-  background-color:#F8F9FA;
+  background-color: #f8f9fa;
   margin: 0px;
   padding: 10px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   position: fixed;
   top: 0;
   z-index: 9999;
   width: 100%;
-
 }
 
 .nav-selected {
@@ -162,14 +172,14 @@ hr {
   font-size: 1.1em;
 }
 
-#event-description{
+#event-description {
   width: 98%;
 }
 
-.description{
-  margin-left: 3%
+.description {
+  margin-left: 3%;
 }
 
-.event-confirm{
-  margin-left: 5%
+.event-confirm {
+  margin-left: 5%;
 }
