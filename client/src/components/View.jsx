@@ -1,12 +1,12 @@
 import React from 'react';
 import Event from './Event.jsx'
-const View = ({events, changeView}) => {
+const View = (props) => {
   return (
   <div className="view">
     <ul>
       <li className="view-list-item">
-        {events.map(event =>(
-          <Event event = {event} key = {event._id} changeView={changeView}/>
+        {props.events.map(event =>(
+          <Event event = {event} key = {event._id}/>
 
           ))}
 

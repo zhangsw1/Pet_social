@@ -10,13 +10,15 @@ let eventsSchema = new mongoose.Schema({
   eventDescription: String,
   eventLocation: String,
   eventLimitation: String,
-  created: { type: Date, default: Date.now }
+  created: { type: Date, default: Date.now },
+  join: Number,
+  maybe: Number
 });
 
 let Events = mongoose.model('Events', eventsSchema);
 
 let fetchData = (callback) => {
-  Events.find().sort({timestamps:-1}).exec(function(err, data){
+  Events.find().sort({created:-1}).exec(function(err, data){
     if(err){
       console.log("there is an erro in fetchData",err);
       callback(err)

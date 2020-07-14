@@ -9,16 +9,14 @@ module.exports = {
     path: DIST_DIR,
     filename: 'bundle.js'
   },
-  resolve: {
-    extensions: ['', '.js', '.jsx']
-  },
+
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
         use: {
-          loader: ["style-loader", "css-loader",'babel-loader'],
+          loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env', '@babel/preset-react'],
           }
